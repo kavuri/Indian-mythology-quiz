@@ -1,0 +1,127 @@
+{
+    "languageModel": {
+        "invocationName": "indian mythology",
+        "intents": [
+            {
+                "name": "AMAZON.CancelIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StopIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StartOverIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.PauseIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "QuizIntent",
+                "slots": [
+                    {
+                        "name": "Mythology_Types",
+                        "type": "Mythology_Types"
+                    }
+                ],
+                "samples": [
+                    "Can you start Indian Mythology quiz",
+                    "a quiz",
+                    "for a quiz",
+                    "and start a quiz",
+                    "Indian mythology quiz",
+                    "start a quiz game",
+                    "start a quiz"
+                ]
+            }
+        ],
+        "types": [
+            {
+                "name": "Mythology_Types",
+                "values": [
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "Mahabharatha",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "Ramayana",
+                            "synonyms": []
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "dialog": {
+        "intents": [
+            {
+                "name": "QuizIntent",
+                "confirmationRequired": true,
+                "prompts": {
+                    "confirmation": "Confirm.Intent.1060594341761"
+                },
+                "slots": [
+                    {
+                        "name": "Mythology_Types",
+                        "type": "Mythology_Types",
+                        "confirmationRequired": true,
+                        "elicitationRequired": true,
+                        "prompts": {
+                            "confirmation": "Confirm.Slot.1060594341761.68624712809",
+                            "elicitation": "Elicit.Slot.1060594341761.68624712809"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "prompts": [
+        {
+            "id": "Elicit.Slot.1060594341761.68624712809",
+            "variations": [
+                {
+                    "type": "PlainText",
+                    "value": "Please choose between Ramayana, Mahabharatha mythology quiz"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "Would you like a quiz on Ramayana or Mahabharatha"
+                }
+            ]
+        },
+        {
+            "id": "Confirm.Slot.1060594341761.68624712809",
+            "variations": [
+                {
+                    "type": "PlainText",
+                    "value": "OK, starting the quiz on {Mythology_Types}"
+                }
+            ]
+        },
+        {
+            "id": "Confirm.Intent.1060594341761",
+            "variations": [
+                {
+                    "type": "PlainText",
+                    "value": "OK, starting a quiz on {Mythology_Types}"
+                }
+            ]
+        }
+    ]
+}

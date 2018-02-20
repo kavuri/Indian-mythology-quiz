@@ -1,0 +1,56 @@
+[
+  {
+    "TableName" : "mythologies",
+    "KeySchema": [
+      { "AttributeName": "name", "KeyType": "HASH"}
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "name", "AttributeType": "S" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  },
+  {
+    "TableName" : "Ramayana",
+    "KeySchema": [
+      { "AttributeName": "Counter", "KeyType": "HASH"}
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "Counter", "AttributeType": "N" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  },
+  {
+    "TableName" : "Mahabharatha",
+    "KeySchema": [
+      { "AttributeName": "Counter", "KeyType": "HASH"}
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "Counter", "AttributeType": "N" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  },
+  {
+    "TableName" : "user_quiz_tracker",
+    "KeySchema": [
+      { "AttributeName": "mythology", "KeyType": "HASH"},
+      { "AttributeName": "userId", "KeyType": "RANGE" }
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "mythology", "AttributeType": "S" },
+      { "AttributeName": "userId", "AttributeType": "S" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+  }
+]
