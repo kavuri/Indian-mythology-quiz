@@ -1,0 +1,42 @@
+Counter,Question,Responses,Answer,Type,Difficulty_Level,More_info
+1,Who wrote Mahabharata?,"Valmiki,Vishwamitra,Vedavyasa",Valmiki,Optional,2,TBD
+2,Who was the father of Pandavas?,"Paandu, Vibheeshana,Bheeshma",Paandu,Optional,3,TBD
+3,Mahabharata is the story of Kauravas and Pandavas,RIGHT,RIGHT,TF,1,TBD
+4,Who is the grand father of Kauravas and Pandavas?,"Bheeshma,Dasaratha,Nanda",Bheeshma,Optional,2,TBD
+5,Who helped Vedavyasa write Mahabharata?,"Ganesha,Hanuman,Krishna",Ganesha,Optional,3,TBD
+6,Karna was the son of Krishna,WRONG,WRONG,TF,2,TBD
+7,Arjuna was the brother of Bheema,RIGHT,RIGHT,TF,1,TBD
+8,What was Bheema's weapon?,"Bow,Mace,Sword",Mace,Optional,1,TBD
+9,Kauravas were 98 brothers,WRONG,WRONG,TF,1,TBD
+10,Who was the Guru or teacher of Kauravas and Pandavas?,"Drona,Valmiki,Vidura",Drona,Optional,2,TBD
+11,What was the name of Arjuna's Bow?,"Dhadeechi,Kousthubam,Gandeevam",Gandeevam,Optional,3,TBD
+12,Who was the wife of Pandavas?,"Bhanumati,Draupadi,Kunti",Draupadi,Optional,2,TBD
+13,Who married Krishna's sister?,"Bheema,Duryodhana,Arjuna",Arjuna,Optional,3,TBD
+14,Pandavas changed their identities and served in which King's court?,"Viraata,Karna,Nala",Viraata,Optional,3,TBD
+15,Kunti and Madri were wives of Paandu,RIGHT,RIGHT,TF,2,TBD
+16,What was the famous battle of Mahabharata called?,"Kurukshetra,Mahayudh,Ranabhoomi",Kurukshetra,Optional,1,TBD
+17,Dharmaraja was the eldest of Pandavas,RIGHT,RIGHT,TF,1,TBD
+18,Who lied on the bed of arrows until death?,"Karna,Arjuna,Bheeshma",Bheeshma,Optional,2,TBD
+19,How many chapters did Bhagavadgeeta have?,"21,11,18",18,Optional,3,TBD
+20,In which Yuga did Mahabharata take place?,"Tretha Yuga,Dwaapara Yuga,Kali Yuga",Dwapara yuga,Optional,2,TBD
+21,Abhimanyu was the son of?,"Arjuna,Bheema,Yudhishtira",Arjuna,Optional,1,TBD
+22,Hidimba was wife of?,"Arjuna,Nakula,Bheema",Bheema,Optional,2,TBD
+23,Who was the mother of Kauravas?,"Gaandhaari,Kunti,Radha",Gaandhaari,Optional,2,TBD
+24,Who was the mother of Bheeshma?,"Ambika,Ganga,Satyavathi",Ganga,Optional,2,TBD
+25,Who was the Guru or teacher of Karna?,"Drona,Vidura,Parasurama",Parasurama,Optional,3,TBD
+26,Duryodhana was the enemy of Karna,WRONG,WRONG,TF,1,TBD
+27,Kauravas won the battle of Kurukshetra,WRONG,WRONG,TF,1,TBD
+28,Who was known as Savyasachi?,"Arjuna,Sahadeva,Bheeshma",Arjuna,Optional,2,TBD
+29,Who tried to kill pandavas by setting fire to the lax house they resided in ,"Karna,Duryodhana,Indra",Duryodhana,Optional,2,TBD
+30,Pandavas hid their weapons on a tree when in disguise,RIGHT,RIGHT,TF,1,TBD
+31,In which language was Mahabharata written?,"Hindi,Sanskrit,Tamil",Sanskrit,Optional,1,TBD
+32,Who was the father of Bheeshma?,"Surya,Santanu,Vichitraveerya",Santanu,Optional,2,TBD
+33,What was the capital ciy of Kauravas and Pandavas called?,"Hastinapura,Viratapura,Dwaraka",Hastinapura,Optional,2,TBD
+34,King Dritarashtra was blind,RIGHT,RIGHT,TF,1,TBD
+35,Sahadeva was a good cook,WRONG,WRONG,TF,1,TBD
+36,Kauravas lost to pandavas in the game of dice and left the kingdom,WRONG,WRONG,TF,1,TBD
+37,Who injured Bheeshma in the battle?,"Drupada,Shikhandi,Satyabhama",Shikhandi,Optional,3,TBD
+38,Who rode Arjuna's chariot in the battle?,"Krishna,Indra,Hanuman",Krishna,Optional,1,TBD
+39,Bhagavadgeetha was recited by Krishna to arjuna in the battle field,RIGHT,RIGHT,TF,1,TBD
+40,Who encouraged Duryodhana's evil ways?,"Bheeshma,Sakuni,Vidura",Sakuni,Optional,1,TBD
+41,Shakuni was the brother of?,"Gaandhari,Duryodhana,Draupadi",Gaandhari,Optional,2,TBD

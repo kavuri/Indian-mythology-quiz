@@ -106,7 +106,7 @@ class Tables {
           // Add entry to db
           this.dynDC.put(params, (err, data) => {
             if (err) {
-              console.error("Unable to add "+ JSON.stringify(params, null, 2) + " in " + mythology + "quiz. Error JSON:", JSON.stringify(err, null, 2));
+              console.error("Unable to add "+ JSON.stringify(params, null, 2) + " in " + mythology + " quiz. Error JSON:", JSON.stringify(err, null, 2));
             } else {
               console.log("Added "+ mythology + " quiz:");
             }
@@ -120,6 +120,6 @@ class Tables {
 var tables = new Tables();
 // tables.create();
 // tables.list();
-// tables.deleteTables([ {'TableName': 'ramayana'}, {'TableName': 'mahabharatha'}, {'TableName': 'bhagavatha'} ]);
+// tables.deleteTables([ {'TableName': 'ramayana'}, {'TableName': 'Mahabharatha'}, {'TableName': 'Bhagavatha'} ]);
 
 tables.addQuizFilesToDb()

@@ -1,27 +1,41 @@
-Counter,Question,Responses,Answer,Type,Difficulty_Level,More_info
-1,Who is the father of Lord Rama,"Agastya,Dasaratha,Vishwamitra",Dasaratha,Optional,2,TBD
-2,How many years did Lord Rama had to spend in the forest,14,14,Answer,1,TBD
-3,Rama had 4 brothers,FALSE,FALSE,TF,1,TBD
-4,Valmiki Maharshi is the writer of the Ramayana epic,TRUE,TRUE,TF,1,TBD
-5,Who is the twin brother of Sugreeva,"Hanuman,Vali,Angadha",Vali,Optional,3,TBD
-6,In which Yuga did Ramayana happen,"Kali,Dwapara,Treta",Dwapara,Optional,3,TBD
-7,Who is the father of Sita,"Dasaratha,Janaka,Brahma",Janaka,Optional,2,TBD
-8,What is the kingdom of Ravana known as,Lanka,Lanka,Answer,1,TBD
-9,Who was Kaikeyi's son?,"Bharata,Rama,Lakshmana",Bharata,Optional,2,TBD
-10,Who is Ravana's brother?,"Sugreeva,Kumbhakarna,Lakshmana",Kumbhakarna,Optional,3,TBD
-11,Who is the famous monkey God we worship?,"Jambavantha,Sugreeva,Hanuman",Hanuman,Optional,3,TBD
-12,The children of Rama and Sita are,Lava and Kusa,Lava and Kusa,Answer,2,TBD
-13,Who was the first teacher of Rama and his brothers?,"Sage Vasishta,Sage Vishwamitra,Sage Agastya",Vishwamitra,Optional,3,TBD
-14,Who were the twin brothers of Rama?,Lakshmana and Satrugna,Lakshmana and Shatrugna,Answer,1,TBD
-15,Which Yagna did Dasaratha perform to have children?,"Daksha Yagna,Rajasuya,Putrakaameshti",,Optional,3,TBD
-16,Who served fruits to Rama and Lakshmana in the forest?,"Durvasa,Sabari,Urmila",Sabari,Optional,2,TBD
-17,In which garden was Sita found by Hanuman in Lanka?," Ashoka,Vindhya,Meru",Ashoka,Optional,3,TBD
-18,Who was Rama's mother?,"Kaikeyi,Sumitra,Kausalya",Kausalya,Optional,1,TBD
-19,Rama killed Sugreeva's brother,TRUE,TRUE,TF,1,TBD
-20,Sita was killed by Ravana,FALSE,FALSE,TF,1,TBD
-21,Who was Ravana's brother who helped Rama,"Kumbhakarna,Meghanatha,Vibheeshana",Vibheeshana,Optional,3,TBD
-22,Whose wife was Urmila?,"Lakshmana,Ravana,Bharatha",Ravana,Optional,3,TBD
-23,Sita liked a silver deer in the forest,FALSE,FALSE,TF,1,TBD
-24,Dasaratha was King of ?,"Lanka,Ayodhya,Videha",Ayodhya,Optional,1,TBD
-25,Who was the Vulture King who helped Rama?,"Yayaati,Soma,Jataayu",Jataayu,Optional,2,TBD
-26,What was the name of Rama's bow called?,"Kodanda,Ghandeevam,Sanjeevanam",Kodanda,Optional,3,TBD
+Counter,Question,Responses,Answer,Type,Difficulty_Level,More_info,
+1,Who is the father of Lord Rama?,"Agastya,Dasaratha,Janaka",Dasaratha,Optional,2,"Dasaratha was the father of Rama, who ruled the kingdom of Ayodhya.",
+2,How many years did Rama spend in the forest in exile?,"12,14,19",14,Optional,1,"On the behest of his stepmother Kaikeyi,his father Dasaratha orders Rama to leave the kingdom and live in exile for 14 years.",
+3,Rama had 4 brothers,WRONG,WRONG,TF,1,"Rama had three brothers Bharata,Lakshmana and Shatrughna who were younger to him.",
+4,Valmiki Maharshi is the writer of the Ramayana epic,RIGHT,RIGHT,TF,1,"Yes indeed! Valmiki is considered the First poet or adi Kavi of Hindu Literature and Ramayana, the first Epic poem.",
+5,Who is the twin brother of Sugreeva?,"Hanuman,Vaali,Angadha",Vaali,Optional,3,Vaali is the twin borther of Sugreeva who had the power of extracting half the strength of any person who fought with him in single-combat.,
+6,In which Yuga did Ramayana happen?,"Kali,Dwapara,Treta",Dwapara,Optional,3,"The whole story of Ramayana took place in Treta Yuga which is a Hindu era.The four Hindu Yugas are Kritha Yuga,Treta Yuga,Dwapara Yuga  and Kali Yuga.",
+7,Who was the father of Sita?,"Dasaratha,Janaka,Brahma",Janaka,Optional,2,Janaka was the father of Sita who found her in a box while ploughing a field in his Kingdom and brought her up as his own daughter with lot of love.Mithila was his kingdom.,
+8,What is the kingdom of Ravana known as?,"Ayodhya,Lanka,Dakshina",Lanka,Optional,1,"Ravana ruled Lanka,the present day Sri Lanka.Ravana defeated Kubera,the ruler of Lanka and made it his abode.",
+9,Who was Kaikeyi's son?,"Bharata,Rama,Lakshmana",Bharata,Optional,2,"Kaikeyi,step mother of Rama wanted her son Bharata to be crowned as the  King of Ayodhya after listening to her maid Manthara's evil words.Bharata is not aware of this and he admonishes his mother when Rama leaves the Kingdom.",
+10,Who is Ravana's brother?,"Sugreeva,Kumbhakarna,Lakshmana",Kumbhakarna,Optional,3,"Ravana's brother Kumbhakarna was very powerful,monstrous in size,had a great apetite and was asleep for 6 months in an year.",
+11,Who is the famous monkey God we worship?,"Jambavantha,Sugreeva,Hanuman",Hanuman,Optional,3,"Hanuman,also known as Anjaneya or maruthi is also worshipped along with Lord Rama in hinduism.He is known for his great valour and his love and devotion towards Lord Rama.",
+12,What are the names of children of Rama and Sita,"nakula and sahadev, Lava and Kusa",Lava and Kusa,Optional,2,TBD,
+13,Who was the first teacher of Rama and his brothers?,"Sage Vasishta,Sage Vishwamitra,Sage Agastya",Vishwamitra,Optional,3,TBD,
+14,Who were the twin brothers of Rama?,"Lakshmana and Bharata,Rama and Lakshmana,Lakshmana and Satrughna",Lakshmana and Shatrugna,Optional,1,TBD,Satrugna not working
+15,Which Yagna did Dasaratha perform to have children?,"Ashwamedha,Rajasuya,Putrakaameshti",Putrakaameshti,Optional,3,TBD,
+16,Who served fruits to Rama and Lakshmana in the forest?,"Durvasa,Sabari,Urmila",Sabari,Optional,2,TBD,
+17,In which garden was Sita found by Hanuman in Lanka?," Ashoka,Vindhya,Meru",Ashoka,Optional,3,TBD,"Vindhya not working, meru not working"
+18,Who was Rama's mother?,"Kaikeyi,Sumitra,Kausalya",Kausalya,Optional,1,TBD,
+19,Rama killed Sugreeva's brother Vaali,RIGHT,RIGHT,TF,1,TBD,
+20,Sita was killed by Ravana,WRONG,WRONG,TF,1,TBD,
+21,Who was Ravana's brother who helped Rama,"Kumbhakarna,Meghanatha,Vibheeshana",Vibheeshana,Optional,3,TBD,
+22,Whose wife was Urmila?,"Lakshmana,Ravana,Bharatha",Ravana,Optional,3,TBD,
+23,Sita liked a silver deer in the forest,WRONG,WRONG,TF,1,TBD,
+24,Dasaratha was King of ?,"Lanka,Ayodhya,Videha",Ayodhya,Optional,1,TBD,
+25,Who was the Vulture King who helped Rama?,"Yayaati,Soma,Jataayu",Jataayu,Optional,2,TBD,
+26,What was the name of Rama's bow called?,"Kodandam,Gandeevam,Sanjeevanam",Kodandam,Optional,3,TBD,
+27,Rama wanted to play with moon in his childhood,RIGHT,RIGHT,TF,1,TBD,
+28,Who did Hanuman think to be a fruit in his childhood?,"Moon,Sun,Earth",Sun,Optional,1,TBD,
+29,Surpanaka was Rama's sister,WRONG,WRONG,TF,1,TBD,
+30,Who is the wife of Lakshmana who was famous for her sleep?,"Maandavi,Sumithra,Urmila",Urmila,Optional,3,TBD,
+31,In which clan was Rama Born?,"Raghu,Manu,Kuru",Raghu,Optional,2,TBD,
+32,Which animal helped Rama and the monkeys by carrying stones on its back to build a bridge?,"Mouse,Squirrel,Tiger",Squirrel,Optional,2,TBD,
+33,Which Asura wore the diguise as the golden deer to attract Sita?,"Subaahu,Ravana,Mareecha",Mareecha,Optional,2,TBD,
+34,Who was the wife of Sage Gowthama who turned into stone?,"Ahalya,Arundhati,Gowthami",Ahalya,Optional,2,TBD,
+35,Who was the mother of Hanuman?,"Vasudha,Anjana,Radha",Anjana,Optional,2,TBD,
+36,Who was the wife of Ravana,"Sruthakeerthi,Ahalya,Mandodari",Mandodari,Optional,3,TBD,
+37,Ravana was the devotee of Lord Brahma,WRONG,WRONG,TF,1,TBD,
+38,Who wrote Ramayana in Hindi?,"Tulsidas,Kabirdas,Peerdas",Tulsidas,Optional,3,TBD,
+39,Who was the son of Ravana,"Vibheeshana,Meghanaad,sugreeva",Meghanaad,Optional,2,TBD,
+40,Ravana broke Siva's bow during Sita Swayamvara,WRONG,WRONG,TF,1,TBD,
