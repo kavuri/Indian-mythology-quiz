@@ -17,15 +17,18 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "https://determined-lennon.bespoken.link",
-          "sslCertificateType":"Wildcard"
+          "sourceDir": "lambda/custom/default-NA"
         },
         "interfaces": [],
         "regions": {
           "EU": {
             "endpoint": {
-              "uri": "https://determined-lennon.bespoken.link",
-              "sslCertificateType":"Wildcard"
+              "sourceDir": "lambda/custom/EU"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "sourceDir": "lambda/custom/default-NA"
             }
           }
         }
@@ -34,4 +37,3 @@
     "manifestVersion": "1.0"
   }
 }
-

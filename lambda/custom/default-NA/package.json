@@ -1,0 +1,21 @@
+{
+  "name": "IndianMythologyQuiz",
+  "version": "1.0.0",
+  "description": "A quiz about Indian mythology",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "fact"
+  ],
+  "author": "Amazon.com",
+  "license": "Kamamishu",
+  "dependencies": {
+    "alexa-sdk": "^1.0.25",
+    "lodash": "^4.17.5",
+    "string-similarity": "^1.2.0"
+  }
+}

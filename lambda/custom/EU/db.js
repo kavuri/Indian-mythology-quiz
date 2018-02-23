@@ -9,7 +9,7 @@ var DBConn = require('./db_connection.js');
 
 module.exports = class Db {
   constructor() {
-    var dbConn = new DBConn(false);
+    var dbConn = new DBConn(true);
     this.dynDB = dbConn.dynDB();
     this.dynDC = dbConn.dynDC();
   }
