@@ -11,7 +11,7 @@ module.exports = Object.freeze({
 
     // Custom Skill Settings
     DYNAMO_SESSION_TABLE : 'user_quiz_tracker',
-    TOTAL_QUESTIONS : 5,
+    TOTAL_QUESTIONS : 2,
 
     // For code debugging
     DEBUG : false,

@@ -6,8 +6,8 @@
 var languageStrings = {
   "en-IN": {
     "translation": {
-      "WELCOME_MESSAGE": "Welcome to the Indian Mythology Quiz! Choose one of %s to start the quiz",
-      "PROMPT_CHOICES": " Choose one of %s to start the quiz",
+      "WELCOME_MESSAGE": "Welcome to the Indian Mythology Quiz! ",
+      "CHOICE_QUESTION": " Choose one of %s to start the quiz. ",
       "START_QUIZ_MESSAGE": " I will ask you %s questions about %s. Lets start.",
       "EXIT_SKILL_MESSAGE": " Thank you for playing the Indian Mythology Quiz!  Let's play again soon!",
       "HELP_MESSAGE": " This is a quiz game that tests your knowledge of Indian mythologies like the Ramayana, Mahabharatha. Would you like me to start the quiz?",
@@ -18,7 +18,7 @@ var languageStrings = {
       "FINAL_SCORE": " Your final score is %s out of %s. ",
       "QUESTION": " Here is your %sth question. %s",
       "SYSTEM_ERROR": "There was some problem with the skill. Please try again",
-      "QUESTION_RIGHT_WRONG_SUFFIX": " Answer right or wrong",
+      "QUESTION_TRUE_FALSE_SUFFIX": " Answer true or false",
       "QUESTION_OPTIONS_SUFFIX": " Your options: ",
       "ASK_TO_REPEAT":" Can you repeat the answer please ",
       "CORRECT_ANSWER": " The correct answer is %s. ",

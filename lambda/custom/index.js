@@ -52,10 +52,16 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
           mythologies += data[i].name + ",";
         }
 
-        console.log("mythologies=",mythologies)
-        let output = this.t("WELCOME_MESSAGE", mythologies)
-        console.log(output);
-        this.emit(":ask", this.t("WELCOME_MESSAGE", mythologies));
+        let output = "";
+        console.log('##',this.attributes);
+        if (!_.has(this.attributes, "quizscore")) {
+          output = this.t("WELCOME_MESSAGE") + this.t("CHOICE_QUESTION", mythologies)
+        } else {
+          output = this.t("CHOICE_QUESTION", mythologies)
+        }
+
+        console.log('@@output=',output);
+        this.emit(":ask", output);
       }
     });
   },
@@ -134,18 +140,19 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
         var type = item.Type;
         var question_suffix = "";
         if (_.isEqual(type, "TF")) {
-          question_suffix = this.t("QUESTION_RIGHT_WRONG_SUFFIX");
+          question_suffix = this.t("QUESTION_TRUE_FALSE_SUFFIX");
         } else if (_.isEqual(type, "Optional")) {
           question_suffix = this.t("QUESTION_OPTIONS_SUFFIX") + item.Responses
         }
         let question = this.attributes["response"] + item.Question + "." + question_suffix;
         this.attributes["quizitem"] = item;
+        this.attributes["quizitem"].Question = question;
         this.attributes["counter"] += 1;
         this.emit(":ask", question);
       }
     })
   },
-  "AnswerIntent": function() {
+  "AnswersIntent": function() {
     let response = "";
     let speechOutput = "";
     let item = this.attributes["quizitem"];
@@ -181,8 +188,7 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
   "AMAZON.RepeatIntent": function() {
     let quizitem = this.attributes["quizitem"];
     let question = quizitem.Question;
-    this.response.speak(question).listen(question);
-    this.emit(":responseReady");
+    this.emit(":ask", question);
   },
   "AMAZON.StartOverIntent": function() {
     this.emitWithState("Quiz");
@@ -212,12 +218,13 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
 });
 
 function verifyAnswer(slot, quizitem) {
-  if (!_.isUndefined(slot.answer.value)) {
+  let answer = slot.answers.value;
+  if (!_.isUndefined(answer)) {
     var stringSimilarity = require('string-similarity');
-    let similarity = stringSimilarity.compareTwoStrings(slot.answer.value.toString().toLowerCase(), quizitem.toString().toLowerCase());
-    console.log('@@',slot.answer.value.toString().toLowerCase(), quizitem.toString().toLowerCase(), similarity);
+    let similarity = stringSimilarity.compareTwoStrings(answer.toString().toLowerCase(), quizitem.toString().toLowerCase());
+    console.log('@@',answer.toString().toLowerCase(), quizitem.toString().toLowerCase(), similarity);
 
-    if (similarity >= 0.14) {
+    if (similarity >= 0.7) {
       return true
     }
   }

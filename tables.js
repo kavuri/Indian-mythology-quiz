@@ -10,7 +10,7 @@ var DBConn = require('./lambda/custom/db_connection.js');
 class Tables {
   constructor() {
     // get the db connection
-    var dbConn = new DBConn(false);
+    var dbConn = new DBConn(true);
     this.dynDB = dbConn.dynDB();
     this.dynDC = dbConn.dynDC();
   }
