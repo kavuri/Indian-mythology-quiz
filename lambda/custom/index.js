@@ -138,19 +138,13 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
         console.log('error in getting question:', err);
         this.emit(":tell", this.t("SYSTEM_ERROR"));
       } else {
-        var type = item.Type;
-        var question_suffix = "";
-        if (_.isEqual(type, "TF")) {
-          question_suffix = this.t("QUESTION_TRUE_FALSE_SUFFIX");
-        } else if (_.isEqual(type, "Optional")) {
-          question_suffix = this.t("QUESTION_OPTIONS_SUFFIX") + item.Responses
-        }
-        question += item.Question + "." + question_suffix;
+        question += createQuestion(this, item);
+
         this.attributes["quizitem"] = item;
         this.attributes["asked_question"] = question;
         this.attributes["counter"] += 1;
         let finalResponse = this.attributes["response"] + question;
-        this.emit(":ask", question);
+        this.emit(":ask", finalResponse);
       }
     })
   },
@@ -166,22 +160,25 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
     if (correct) {
       console.log('##constructing correct response..')
       let correctResponses = this.t("CORRECT_RESPONSES")
-      response = "<say-as interpret-as='interjection'>" + correctResponses[getRandom(0, correctResponses.length-1)] + "! </say-as><break strength='strong'/>";
+      response = "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Winchester12-RA_The_Sun_God-cov.mp3' /> <say-as interpret-as='interjection'>" + correctResponses[getRandom(0, correctResponses.length-1)] + "! </say-as><break strength='strong'/> ";
 
       this.attributes["quizscore"]++;
     } else {
       console.log('##constructing in-correct response......')
       let inCorrectResponses = this.t("INCORRECT_RESPONSES")
-      response = "<say-as interpret-as='interjection'>" + inCorrectResponses[getRandom(0, inCorrectResponses.length-1)] + " </say-as><break strength='strong'/>";
+      response = "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Slap-SoundMaster13-cov.mp3' /> <say-as interpret-as='interjection'>" + inCorrectResponses[getRandom(0, inCorrectResponses.length-1)] + " </say-as><break strength='strong'/> ";
       response += this.t("CORRECT_ANSWER", item.Answer)
     }
 
     if (this.attributes["counter"] < constants.TOTAL_QUESTIONS) {
       this.attributes["response"] = response;
-      // this.response.speak(response);
       this.emitWithState("AskQuestion");
     } else {
       response += this.t("FINAL_SCORE", this.attributes["quizscore"], this.attributes["counter"]);
+      if (_.isEqual(this.attributes["quizscore"], 0)) {
+        response += this.t("ZERO_SCORE_RESPONSE");
+      }
+      response += "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Audience_Applause-Matthiew11-cov.mp3' />"
       speechOutput = response + " " + this.t("PLAY_AGAIN");
 
       this.emit(":ask", speechOutput);
@@ -190,27 +187,29 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
   "AMAZON.RepeatIntent": function() {
     let quizitem = this.attributes["quizitem"];
     let question = createQuestion(this, quizitem)
-    // let question = quizitem.Question;
+
     this.emit(":ask", question);
   },
   "AMAZON.StartOverIntent": function() {
-    this.emitWithState("Quiz");
+    this.handler.state = states.START;
+    this.emitWithState("Start");
   },
   "AMAZON.StopIntent": function() {
-    this.emit(":responseReady", this.t("EXIT_SKILL_MESSAGE"))
+    this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.PauseIntent": function() {
-    this.emit(":responseReady", this.t("EXIT_SKILL_MESSAGE"))
+    // TODO: Need to store the state to support Pause
+    this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.CancelIntent": function() {
-    this.emit(":responseReady", this.t("EXIT_SKILL_MESSAGE"))
+    this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.HelpIntent": function() {
-    this.emit(":responseReady", this.t("HELP_MESSAGE"), this.t("HELP_MESSAGE"));
+    this.emit(":ask", this.t("HELP_MESSAGE"), this.t("HELP_MESSAGE"));
   },
   "AMAZON.YesIntent": function() {
     this.handler.state = states.START;
-    this.emitWithState("Start");
+    this.emitWithState("Quiz");
   },
   "AMAZON.NoIntent": function() {
     this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
