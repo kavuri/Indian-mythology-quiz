@@ -124,10 +124,11 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
   },
   "AskQuestion": function() {
     console.log('question asking...', this.attributes)
+    let question = "";
     if (_.isEqual(this.attributes["counter"], 0)) {
-      this.attributes["response"] = this.t("START_QUIZ_MESSAGE", constants.TOTAL_QUESTIONS, this.attributes["choice"]) + " ";
+      question = this.t("START_QUIZ_MESSAGE", constants.TOTAL_QUESTIONS, this.attributes["choice"]) + " ";
     } else {
-      this.attributes["response"] += this.t("NEXT_QUESTION_PREFIX")
+      question += this.t("NEXT_QUESTION_PREFIX")
     }
 
     let random = getRandom(1, this.attributes["total"]);
@@ -144,10 +145,11 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
         } else if (_.isEqual(type, "Optional")) {
           question_suffix = this.t("QUESTION_OPTIONS_SUFFIX") + item.Responses
         }
-        let question = this.attributes["response"] + item.Question + "." + question_suffix;
+        question += item.Question + "." + question_suffix;
         this.attributes["quizitem"] = item;
-        this.attributes["quizitem"].Question = question;
+        this.attributes["asked_question"] = question;
         this.attributes["counter"] += 1;
+        let finalResponse = this.attributes["response"] + question;
         this.emit(":ask", question);
       }
     })
@@ -187,7 +189,8 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
   },
   "AMAZON.RepeatIntent": function() {
     let quizitem = this.attributes["quizitem"];
-    let question = quizitem.Question;
+    let question = createQuestion(this, quizitem)
+    // let question = quizitem.Question;
     this.emit(":ask", question);
   },
   "AMAZON.StartOverIntent": function() {
@@ -230,6 +233,18 @@ function verifyAnswer(slot, quizitem) {
   }
 
   return false;
+}
+
+function createQuestion(self, quizitem) {
+  var type = quizitem.Type;
+  var question_suffix = "";
+  if (_.isEqual(type, "TF")) {
+    question_suffix = self.t("QUESTION_TRUE_FALSE_SUFFIX");
+  } else if (_.isEqual(type, "Optional")) {
+    question_suffix = self.t("QUESTION_OPTIONS_SUFFIX") + quizitem.Responses
+  }
+  let question = quizitem.Question + "." + question_suffix;
+  return question;
 }
 
 function getRandom(min, max) {
