@@ -139,7 +139,10 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
 
     let available_questions = this.attributes["user"].avble_qs[this.attributes["choice"]];
     let question_no = available_questions[getRandom(0, available_questions.length)];
-    console.log('question_no=',question_no, ', available_questions=', available_questions)
+    if (_.isUndefined(question_no)) {
+      question_no = available_questions.length;
+    }
+    console.log('question_no=',question_no)
 
     db.question(this.attributes["choice"], question_no, (err, item) => {
       if (err) {
