@@ -178,7 +178,11 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
       console.log('##constructing in-correct response......')
       let inCorrectResponses = this.t("INCORRECT_RESPONSES")
       response = "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Slap-SoundMaster13-cov.mp3' /> <say-as interpret-as='interjection'>" + inCorrectResponses[getRandom(0, inCorrectResponses.length-1)] + " </say-as><break strength='strong'/> ";
-      response += this.t("CORRECT_ANSWER", item.Answer)
+      if (_.isEqual(item.Type, 'TF')) {
+        response += this.t("TF_HINT", item.Hint);
+      } else {
+        response += this.t("CORRECT_ANSWER", item.Answer)
+      }
     }
 
     // Remove the current asked question from the bucket

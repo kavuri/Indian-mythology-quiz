@@ -98,8 +98,7 @@ class Tables {
               Responses: quiz.Responses,
               Answer: quiz.Answer,
               Type: quiz.Type,
-              Difficulty_Level: quiz.Difficulty_Level,
-              More_info: quiz.More_info
+              Hint: quiz.Hint
             }
           };
 
@@ -118,8 +117,8 @@ class Tables {
 }
 
 var tables = new Tables();
-tables.create();
+// tables.create();
 // tables.list();
 // tables.deleteTables([ {'TableName': 'ramayana'}, {'TableName': 'Mahabharatha'}, {'TableName': 'Bhagavatha'} ]);
 
-// tables.addQuizFilesToDb()
+tables.addQuizFilesToDb()

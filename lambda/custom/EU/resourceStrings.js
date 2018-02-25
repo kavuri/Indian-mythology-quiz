@@ -24,7 +24,8 @@ var languageStrings = {
       "CORRECT_ANSWER": " The correct answer is %s. ",
       "NEXT_QUESTION_PREFIX": " Your next question. ",
       "PLAY_AGAIN":" Would you like to play again? ",
-      "ZERO_SCORE_RESPONSE": " Not a problem. You did gain some knowledge. Didn't you? "
+      "ZERO_SCORE_RESPONSE": " Not a problem. You did gain some knowledge. Didn't you? ",
+      "TF_HINT": " Thats wrong. %s. "
     }
   }
 }
