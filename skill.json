@@ -4,15 +4,31 @@
       "locales": {
         "en-IN": {
           "summary": "A quiz that tests your knowledge of Indian mythologies like Ramayana, Mahabharatha, Bhagavatha",
+          "examplePhrases": [
+            "Alexa, start indian mythology quiz",
+            "Begin India mythology quiz",
+            "Open Indian mythology quiz"
+          ],
+          "keywords": [
+            "kamamishu",
+            "indian",
+            "mythology",
+            "epic",
+            "ramayana",
+            "mahabharata",
+            "bhagavata"
+          ],
           "name": "Indian Mythology Quiz",
-          "description": ""
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/8b3e/762747aded9c4b0bb9f96def556bf7c6/APP_ICON?versionId=Pgyr6ECmB1as0N6zAivTvRx13rd5hFZw&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1519640803&Signature=JQQiAODs2cqB7diYFE9%2BDlmZGs4%3D",
+          "description": "Indian mythologies are filled with tremendous worldly knowledge, wisdom. This quiz will help you understand the Who's and What's of the great epics. We will keep on adding more quiz material with time. Please drop a note at contact@kamamishu.com for any feedback",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/9c34/fd124ff574ca4918a9203880fd30ff5a/APP_ICON_LARGE?versionId=WMVJuVnJM7PZpV_TGT38fLcrl9WykV8g&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1519640803&Signature=vxhNGlTxESsgP6Rrl%2FNMJ9cTjB8%3D"
         }
       },
-      "isAvailableWorldwide": false,
-      "distributionMode": "PRIVATE",
-      "distributionCountries": [
-        "IN"
-      ]
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Launch the skill with the utterance: \"Start Indian mythology quiz\"\n1. Choose between the announced mythologies, e.g.: Ramayana\n2. Answer the questions asked during the quiz\n3. If asked to take a quiz again, say Yes",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
     },
     "apis": {
       "custom": {
@@ -34,6 +50,13 @@
         }
       }
     },
-    "manifestVersion": "1.0"
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": true,
+      "usesPersonalInfo": false
+    }
   }
 }
