@@ -5,12 +5,12 @@
 
 'use strict';
 
-var DBConn = require('./lambda/custom/db_connection.js');
+var DBConn = require('./lambda/custom/EU/db_connection.js');
 
 class Tables {
   constructor() {
     // get the db connection
-    var dbConn = new DBConn(false);
+    var dbConn = new DBConn(true);
     this.dynDB = dbConn.dynDB();
     this.dynDC = dbConn.dynDC();
   }
@@ -118,8 +118,8 @@ class Tables {
 }
 
 var tables = new Tables();
-// tables.create();
+tables.create();
 // tables.list();
 // tables.deleteTables([ {'TableName': 'ramayana'}, {'TableName': 'Mahabharatha'}, {'TableName': 'Bhagavatha'} ]);
 
-tables.addQuizFilesToDb()
+// tables.addQuizFilesToDb()

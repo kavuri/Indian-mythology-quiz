@@ -6,9 +6,6 @@ var _ = require('lodash');
 var languageStrings = require('./resourceStrings');
 var constants = require('./constants');
 
-//Make sure to enclose your value in quotes, like this:  const APP_ID = "amzn1.ask.skill.bb4045e6-b3e8-4133-b650-72923c5980f1";
-const APP_ID = "amzn1.ask.skill.b128a952-0622-4b06-b8a8-487a0f1e2fa9";
-
 const states = {
   START: "_START",
   QUIZ: "_QUIZ"
@@ -39,50 +36,69 @@ const handlers = {
 
 const startHandlers = Alexa.CreateStateHandler(states.START,{
   "Start": function() {
-    console.log('In Start state')
+
+    this.attributes["user"] = {
+      userId: '',
+      deviceId: [],
+      avble_qs: {},
+      scores: [{mythology:'', sc:-1, timestamp: ''}]
+    };
+
     db.available_mythologies((err, data) => {
-      console.log("@@@err, data", err, data)
       if (err) {
         console.log('error in getting mythologies', err);
         this.emit(":tell", this.t("SYSTEM_ERROR"));
       } else if (!_.isNull(data) || !_.isEmpty(data) || !_.isUndefined(data)) {
-        console.log("##data=", data)
         var mythologies = "";
         for (var i=0; i<data.length; i++) {
           mythologies += data[i].name + ",";
+          this.attributes["user"].avble_qs[data[i].name] = [];
         }
 
         let output = "";
-        console.log('##',this.attributes);
         if (!_.has(this.attributes, "quizscore")) {
           output = this.t("WELCOME_MESSAGE") + this.t("CHOICE_QUESTION", mythologies)
         } else {
           output = this.t("CHOICE_QUESTION", mythologies)
         }
 
-        console.log('@@output=',output);
         this.emit(":ask", output);
       }
     });
   },
   "RamayanaIntent": function() {
-    console.log("Got response from user for:")
     this.attributes["choice"] = "Ramayana";
-    this.handler.state = states.QUIZ;
-    this.emitWithState("Quiz");
+
+    initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
+      if (err) {
+        this.emit(":tell", this.t("SYSTEM_ERROR"));
+      }
+      this.handler.state = states.QUIZ;
+      this.emitWithState("Quiz");
+    });
   },
   "MahabharathaIntent": function() {
-    console.log("Got response from user for:")
     this.attributes["choice"] = "Mahabharata";
-    this.handler.state = states.QUIZ;
-    this.emitWithState("Quiz");
+
+    initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
+      if (err) {
+        this.emit(":tell", this.t("SYSTEM_ERROR"));
+      }
+      this.handler.state = states.QUIZ;
+      this.emitWithState("Quiz");
+    });
   },
-  "BhagavataIntent": function() {
-    console.log("Got response from user for:")
-    this.attributes["choice"] = "Bhagavata";
-    this.handler.state = states.QUIZ;
-    this.emitWithState("Quiz");
-  },
+  // "BhagavataIntent": function() {
+  //   this.attributes["choice"] = "Bhagavata";
+
+        // initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
+        //   if (err) {
+        //     this.emit(":tell", this.t("SYSTEM_ERROR"));
+        //   }
+        //   this.handler.state = states.QUIZ;
+        //   this.emitWithState("Quiz");
+        // });
+  // },
   "QuizIntent": function() {
     this.handler.state = states.QUIZ;
     this.emitWithState("Quiz");
@@ -91,7 +107,6 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
     this.emit(":responseReady", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.StopIntent": function() {
-    console.log('@In stop intent')
     this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.CancelIntent": function() {
@@ -107,33 +122,26 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
 
 const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
   "Quiz": function() {
-    db.count(this.attributes["choice"], (err, totalQuestions) => {
-      if (err) {
-        console.log('error in getting count of questions for ' + this.attributes["choice"], err)
-        this.emit(":tell", this.t("SYSTEM_ERROR"));
-      } else {
-        console.log('Setting initial params');
-        this.attributes["total"] = totalQuestions;  //total number of questions to ask from
-        this.attributes["response"] = "";
-        this.attributes["counter"] = 0;
-        this.attributes["quizscore"] = 0;
-        this.attributes["quizitem"] = {};
-        this.emitWithState("AskQuestion");
-      }
-    })
+    console.log('Setting initial params');
+    this.attributes["response"] = "";
+    this.attributes["counter"] = 0;
+    this.attributes["quizscore"] = 0;
+    this.attributes["quizitem"] = {};
+    this.emitWithState("AskQuestion");
   },
   "AskQuestion": function() {
-    console.log('question asking...', this.attributes)
     let question = "";
     if (_.isEqual(this.attributes["counter"], 0)) {
       question = this.t("START_QUIZ_MESSAGE", constants.TOTAL_QUESTIONS, this.attributes["choice"]) + " ";
     } else {
-      question += this.t("NEXT_QUESTION_PREFIX")
+      question += this.t("NEXT_QUESTION_PREFIX");
     }
 
-    let random = getRandom(1, this.attributes["total"]);
-    db.question(this.attributes["choice"], random, (err, item) => {
-      console.log('got a question...')
+    let available_questions = this.attributes["user"].avble_qs[this.attributes["choice"]];
+    let question_no = available_questions[getRandom(0, available_questions.length)];
+    console.log('question_no=',question_no, ', available_questions=', available_questions)
+
+    db.question(this.attributes["choice"], question_no, (err, item) => {
       if (err) {
         console.log('error in getting question:', err);
         this.emit(":tell", this.t("SYSTEM_ERROR"));
@@ -170,6 +178,9 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
       response += this.t("CORRECT_ANSWER", item.Answer)
     }
 
+    // Remove the current asked question from the bucket
+    _.pull(this.attributes["user"].avble_qs[this.attributes["choice"]], this.attributes["quizitem"].Counter);
+
     if (this.attributes["counter"] < constants.TOTAL_QUESTIONS) {
       this.attributes["response"] = response;
       this.emitWithState("AskQuestion");
@@ -180,6 +191,20 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
       }
       response += "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Audience_Applause-Matthiew11-cov.mp3' />"
       speechOutput = response + " " + this.t("PLAY_AGAIN");
+
+      // Write user data to DB
+      let current_time = new Date();
+      this.attributes["user"].userId = this.event.context.System.user.userId;
+      this.attributes["user"].deviceId = [this.event.context.System.user.userId];
+      this.attributes["user"].avble_qs.mythology_choice = this.attributes["choice"];
+      this.attributes["user"].scores = [{"mythology": this.attributes["choice"], "sc": this.attributes["quizscore"], "timestamp": current_time.toString()}]
+
+      db.write_user_data(this.attributes["user"], (err, data) => {
+        if (err) {
+          // Error in writing user data. Ignore
+          console.log('error in writing user data.', err);
+        }
+      });
 
       this.emit(":ask", speechOutput);
     }
@@ -218,6 +243,34 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
     this.emitWithState("AnswerIntent");
   }
 });
+
+function initQuestions(self, userId, mythology_choice, callback) {
+  // Fetch the available questions for the user from DB
+  db.get_user_data(userId, (err, data) => {
+    db.count(mythology_choice, (err, totalQuestions) => {
+      if (err) {
+        console.log('error in getting user ', err)
+      } else if (_.isEmpty(data)) {
+        // User does not exist in system
+        self.attributes["user"].n = true;
+        self.attributes["user"].avble_qs[mythology_choice] = _.range(1, totalQuestions+1); // generate the range of numbers
+      } else {
+        self.attributes["user"].n = false;
+        // User exists in the system. Check if questions list exists for the user
+        if (!_.isEmpty(data.avble_qs[mythology_choice])) {
+          if (self.attributes["user"].avble_qs[mythology_choice].length < constants.TOTAL_QUESTIONS) {
+            self.attributes["user"].avble_qs[mythology_choice] = _.range(1, totalQuestions+1); // generate the range of numbers
+          }
+          self.attributes["user"].avble_qs[mythology_choice] = data.avble_qs[mythology_choice];
+        } else {
+          self.attributes["user"].avble_qs[mythology_choice] = _.range(1, totalQuestions+1); // generate the range of numbers
+        }
+      }
+
+      callback(err, data);
+    })
+  });
+}
 
 function verifyAnswer(slot, quizitem) {
   let answer = slot.answers.value;

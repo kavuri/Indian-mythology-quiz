@@ -39,13 +39,11 @@
     }
   },
   {
-    "TableName" : "user_quiz_tracker",
+    "TableName" : "user",
     "KeySchema": [
-      { "AttributeName": "mythology", "KeyType": "HASH"},
-      { "AttributeName": "userId", "KeyType": "RANGE" }
+      { "AttributeName": "userId", "KeyType": "HASH" }
     ],
     "AttributeDefinitions": [
-      { "AttributeName": "mythology", "AttributeType": "S" },
       { "AttributeName": "userId", "AttributeType": "S" }
     ],
     "ProvisionedThroughput": {
