@@ -1,8 +1,8 @@
 Counter,Question,Responses,Answer,Type,Hint
 1,Who is the father of Lord Rama?,"Agastya,Dasaratha,Janaka",Dasaratha,Optional,
-2,How many years did Rama spend in the forest in exile?,"12,14,19",14,Optional,
-3,Rama had 4 brothers,FALSE,FALSE,TF,Rama has 3 brothers
-4,Valmiki Maharshi is the writer of the Ramayana epic,TRUE,TRUE,TF,Maharshi Valmiki was the writer of Ramayana Epic
+2,How many years did Rama spend in the forest in exile?,12 14 19,14,Optional,
+3,How many brothers did Rama have?,3 2 04,3,Optional,Rama has 3 brothers
+4,"Who is the writer of Ramayana, the epic?","Valmiki, Vasishta,Agastya",Valmiki,Optional,Maharshi Valmiki was the writer of Ramayana Epic
 5,Who was the twin brother of Sugreeva?,"Hanuman,Vaali,Angadha",Vaali,Optional,
 6,In which Yuga did Ramayana happen?,"Kaliyuga,Dwaparayuga,Tretayuga",Dwaparayuga,Optional,
 7,Who was the father of Sita?,"Dasaratha,Janaka,Brahma",Janaka,Optional,
@@ -17,25 +17,24 @@ Counter,Question,Responses,Answer,Type,Hint
 16,Who served fruits to Rama and Lakshmana in the forest?,"Durvasa,Sabari,Urmila",Sabari,Optional,
 17,In which garden was Sita found by Hanuman in Lanka?,"Ashoka,Vindhya,Meru",Ashoka,Optional,
 18,Who was Rama's mother?,"Kaikeyi,Sumitra,Kausalya",Kausalya,Optional,
-19,Rama killed Sugreeva's brother Vaali,TRUE,TRUE,TF,Rama did kill Sugreeva
-20,The golden deer that Sita asked for was killed by Ravana,FALSE,FALSE,TF,"The golden deer was killed by Rama, which turned out to be the daemon Mareeche"
-21,Who was Ravana's brother who helped Rama,"Kumbhakarna,Meghanatha,Vibheeshana",Vibheeshana,Optional,
-22,Urmila was the wife of?,"Lakshmana,Ravana,Bharatha",Lakshmana,Optional,
-23,Sita liked a silver deer in the forest,FALSE,FALSE,TF,The deer was gold in color
-24,Dasaratha was King of ?,"Lanka,Ayodhya,Videha",Ayodhya,Optional,
-25,Who was the Vulture King who helped Rama?,"Yayaati,Soma,Jataayu",Jataayu,Optional,
-26,What was the name of Rama's bow called?,"Kodandam,Gandeevam,Sanjeevanam",Kodandam,Optional,
-27,Rama wanted to play with moon in his childhood,TRUE,TRUE,TF,Rama did want to play with the moon when he was a small kid
-28,Who did Hanuman think to be a fruit in his childhood?,"Moon,Sun,Earth",Sun,Optional,
-29,Surpanaka was Rama's sister,FALSE,FALSE,TF,Surpanaka was Ravana's sister
-30,Who is the wife of Lakshmana who was famous for her sleep?,"Maandavi,Sumithra,Urmila",Urmila,Optional,
-31,In which dynasty was Rama Born?,"Raghu,Manu,Kuru",Raghu,Optional,
-32,Which animal helped Rama and the monkeys by carrying stones on its back to build a bridge?,"Mouse,Squirrel,Tiger",Squirrel,Optional,
-33,Which Asura wore the diguise as the golden deer to attract Sita?,"Subaahu,Ravana,Mareecha",Mareecha,Optional,
-34,Who was the wife of Sage Gowthama who turned into stone?,"Ahalya,Arundhati,Gowthami",Ahalya,Optional,
-35,Who was the mother of Hanuman?,"Vasudha,Anjana,Radha",Anjana,Optional,
-36,Who was the wife of Ravana,"Sruthakeerthi,Ahalya,Mandodari",Mandodari,Optional,
-37,Ravana was the devotee of Lord Brahma,FALSE,FALSE,TF,Ravana was an ardent devotee of Lord Shiva
-38,Who wrote Ramayana in Hindi?,"Tulsidas,Kabirdas,Peerdas",Tulsidas,Optional,
-39,Who was the son of Ravana,"Vibheeshana,Meghanaad,sugreeva",Meghanaad,Optional,
-40,Ravana broke Siva's bow during Sita Swayamvara,FALSE,FALSE,TF,It was Rama who broke the bow during Sita Swayamvara
+19,Who came in the disguise of golden deer  to attract Sita?,"Thataki,Maareecha,Khara",Maarecha,Optional,"The golden deer was killed by Rama, which turned out to be the daemon Mareeche"
+20,Who was Ravana's brother who helped Rama,"Kumbhakarna,Meghanatha,Vibheeshana",Vibheeshana,Optional,
+21,Urmila was the wife of?,"Lakshmana,Ravana,Bharatha",Lakshmana,Optional,
+22,Who came for alms with an intent to abduct Sita?,"Vali,Ravana,Maareecha",Ravana,Optional,The deer was gold in color
+23,Dasaratha was King of ?,"Lanka,Ayodhya,Videha",Ayodhya,Optional,
+24,Who was the Vulture King who helped Rama?,"Yayaati,Soma,Jataayu",Jataayu,Optional,
+25,What was the name of Rama's bow called?,"Kodandam,Gandeevam,Sanjeevanam",Kodandam,Optional,
+26,What is the other name of Ravana's son Meghanad?,"Kubera,Indrajeet,Kakasura",Indrajeet,Optional,Rama did want to play with the moon when he was a small kid
+27,Who did Hanuman think to be a fruit in his childhood?,"Moon,Sun,Earth",Sun,Optional,
+28,Who was Ravana's sister who liked Rama and wanted to marry him?,"Surpanaka,Lankini,Mandodari",Surpanaka,Optional,Surpanaka was Ravana's sister
+29,Who is the wife of Lakshmana who was famous for her sleep?,"Maandavi,Sumithra,Urmila",Urmila,Optional,
+30,In which dynasty was Rama Born?,"Raghu,Manu,Kuru",Raghu,Optional,
+31,Which animal helped Rama and the monkeys by carrying stones on its back to build a bridge?,"Mouse,Squirrel,Tiger",Squirrel,Optional,
+32,Which Asura wore the diguise as the golden deer to attract Sita?,"Subaahu,Ravana,Mareecha",Mareecha,Optional,
+33,Who was the wife of Sage Gowthama who turned into stone?,"Ahalya,Arundhati,Gowthami",Ahalya,Optional,
+34,Who was the mother of Hanuman?,"Vasudha,Anjana,Radha",Anjana,Optional,
+35,Who was the wife of Ravana,"Sruthakeerthi,Ahalya,Mandodari",Mandodari,Optional,
+36,Ravana was a staunch devotee of ,"Rama,Shiva,Brahma",Shiva,Optional,Ravana was an ardent devotee of Lord Shiva
+37,Who wrote Ramayana in Hindi?,"Tulsidas,Kabirdas,Peerdas",Tulsidas,Optional,
+38,Who was the son of Ravana,"Vibheeshana,Meghanaad,sugreeva",Meghanaad,Optional,
+40,Who broke Lord Shiva's bow during Sita's swayamvara?,"Ravana,Sugreeva,Rama",Rama,Optional,It was Rama who broke the bow during Sita Swayamvara

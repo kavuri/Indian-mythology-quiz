@@ -14,29 +14,33 @@ const states = {
 const handlers = {
   "LaunchRequest": function() {
     this.handler.state = states.START;
+    console.log("@@1. LaunchRequest")
     this.emitWithState("Start");
   },
   "QuizIntent": function() {
     this.handler.state = states.QUIZ;
+    console.log("@@1. QuizIntent")
     this.emitWithState("Quiz");
   },
-  "AnswerIntent": function() {
+  "AnswersIntent": function() {
     this.handler.state = states.START;
-    this.emitWithState("AnswerIntent");
+    console.log("@@1. AnswersIntent")
+    this.emitWithState("AnswersIntent");
   },
   "AMAZON.HelpIntent": function() {
-    this.response.speak(HELP_MESSAGE).listen(HELP_MESSAGE);
-    this.emit(":responseReady");
+    console.log("@@1. HelpIntent")
+    this.emit(":ask", this.t("HELP_MESSAGE"));
   },
   "Unhandled": function() {
     this.handler.state = states.START;
+    console.log("@@1. Unhandled")
     this.emitWithState("Start");
   }
 };
 
 const startHandlers = Alexa.CreateStateHandler(states.START,{
   "Start": function() {
-
+    console.log("@@2. START:Start")
     this.attributes["user"] = {
       userId: '',
       deviceId: [],
@@ -67,6 +71,7 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
     });
   },
   "RamayanaIntent": function() {
+    console.log("@@2. START:RamayanaIntent")
     this.attributes["choice"] = "Ramayana";
 
     initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
@@ -78,6 +83,7 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
     });
   },
   "MahabharathaIntent": function() {
+    console.log("@@2. START:MahabharathaIntent")
     this.attributes["choice"] = "Mahabharata";
 
     initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
@@ -100,28 +106,44 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
         // });
   // },
   "QuizIntent": function() {
+    console.log("@@2. START:QuizIntent")
     this.handler.state = states.QUIZ;
     this.emitWithState("Quiz");
   },
-  "AMAZON.PauseIntent": function() {
-    this.emit(":responseReady", this.t("EXIT_SKILL_MESSAGE"))
-  },
+  // "AMAZON.PauseIntent": function() {
+  //   this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
+  // },
   "AMAZON.StopIntent": function() {
+    console.log("@@2. START:StopIntent")
     this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.CancelIntent": function() {
-    this.emit(":responseReady", this.t("EXIT_SKILL_MESSAGE"))
+    console.log("@@2. START:CancelIntent")
+    this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.HelpIntent": function() {
-    this.emit(":responseReady", this.t("HELP_MESSAGE"), this.t("HELP_MESSAGE"));
+    console.log("@@2. START:HelpIntent")
+    this.emit(":ask", this.t("HELP_MESSAGE"));
   },
   "Unhandled": function() {
+    console.log("@@2. START:Unhandled")
+    this.emit(":ask", this.t("ASK_TO_REPEAT"));
+    // this.emitWithState("Start");
+  },
+  "AMAZON.YesIntent": function() {
+    console.log("@@2. START:YesIntent")
+    this.handler.state = states.START;
     this.emitWithState("Start");
-  }
+  },
+  "AMAZON.NoIntent": function() {
+    console.log("@@2. START:NoIntent")
+    this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
+  },
 });
 
 const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
   "Quiz": function() {
+    console.log("@@3. QUIZ:Quiz")
     console.log('Setting initial params');
     this.attributes["response"] = "";
     this.attributes["counter"] = 0;
@@ -130,6 +152,7 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
     this.emitWithState("AskQuestion");
   },
   "AskQuestion": function() {
+    console.log("@@3. QUIZ:AskQuestion")
     let question = "";
     if (_.isEqual(this.attributes["counter"], 0)) {
       question = this.t("START_QUIZ_MESSAGE", constants.TOTAL_QUESTIONS, this.attributes["choice"]) + " ";
@@ -160,6 +183,7 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
     })
   },
   "AnswersIntent": function() {
+    console.log("@@3. QUIZ:AnswersIntent")
     let response = "";
     let speechOutput = "";
     let item = this.attributes["quizitem"];
@@ -171,13 +195,15 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
     if (correct) {
       console.log('##constructing correct response..')
       let correctResponses = this.t("CORRECT_RESPONSES")
-      response = "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Winchester12-RA_The_Sun_God-cov.mp3' /> <say-as interpret-as='interjection'>" + correctResponses[getRandom(0, correctResponses.length-1)] + "! </say-as><break strength='strong'/> ";
+      // response = "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Winchester12-RA_The_Sun_God-cov.mp3' /> <say-as interpret-as='interjection'>" + correctResponses[getRandom(0, correctResponses.length-1)] + "! </say-as><break strength='strong'/> ";
+      response = "<say-as interpret-as='interjection'>" + correctResponses[getRandom(0, correctResponses.length-1)] + "! </say-as><break strength='strong'/> ";
 
       this.attributes["quizscore"]++;
     } else {
       console.log('##constructing in-correct response......')
       let inCorrectResponses = this.t("INCORRECT_RESPONSES")
-      response = "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Slap-SoundMaster13-cov.mp3' /> <say-as interpret-as='interjection'>" + inCorrectResponses[getRandom(0, inCorrectResponses.length-1)] + " </say-as><break strength='strong'/> ";
+      // response = "<audio src='https://s3-eu-west-1.amazonaws.com/indian.mythology/Slap-SoundMaster13-cov.mp3' /> <say-as interpret-as='interjection'>" + inCorrectResponses[getRandom(0, inCorrectResponses.length-1)] + " </say-as><break strength='strong'/> ";
+      response = "<say-as interpret-as='interjection'>" + inCorrectResponses[getRandom(0, inCorrectResponses.length-1)] + " </say-as><break strength='strong'/> ";
       if (_.isEqual(item.Type, 'TF')) {
         response += this.t("TF_HINT", item.Hint);
       } else {
@@ -217,37 +243,46 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
     }
   },
   "AMAZON.RepeatIntent": function() {
+    console.log("@@3. QUIZ:RepeatIntent")
     let quizitem = this.attributes["quizitem"];
     let question = createQuestion(this, quizitem)
 
     this.emit(":ask", question);
   },
-  "AMAZON.StartOverIntent": function() {
-    this.handler.state = states.START;
-    this.emitWithState("Start");
-  },
+  // "AMAZON.StartOverIntent": function() {
+  //   this.handler.state = states.START;
+  //   this.emitWithState("Start");
+  // },
   "AMAZON.StopIntent": function() {
+    console.log("@@3. QUIZ:StopIntent")
     this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.PauseIntent": function() {
+    console.log("@@3. QUIZ:PauseIntent")
     // TODO: Need to store the state to support Pause
     this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.CancelIntent": function() {
+    console.log("@@3. QUIZ:CancelIntent")
     this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "AMAZON.HelpIntent": function() {
+    console.log("@@3. QUIZ:HelpIntent")
     this.emit(":ask", this.t("HELP_MESSAGE"), this.t("HELP_MESSAGE"));
   },
   "AMAZON.YesIntent": function() {
+    console.log("@@3. QUIZ:YesIntent")
     this.handler.state = states.START;
     this.emitWithState("Quiz");
   },
   "AMAZON.NoIntent": function() {
-    this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
+    console.log("@@3. QUIZ:NoIntent")
+    this.emit(":ask", this.t("EXIT_SKILL_MESSAGE"))
   },
   "Unhandled": function() {
-    this.emitWithState("AnswerIntent");
+    console.log("@@3. QUIZ:Unhandled")
+    this.emit(":ask", this.t("ASK_TO_REPEAT"));
+    // this.emitWithState("AnswerIntent");
   }
 });
 

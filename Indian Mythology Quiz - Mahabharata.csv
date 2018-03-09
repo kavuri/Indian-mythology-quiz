@@ -1,42 +1,46 @@
 Counter,Question,Responses,Answer,Type,Hint
 1,Who wrote Mahabharata?,"Valmiki,Vishwamitra,Vedavyasa",Valmiki,Optional,
 2,Who was the father of Pandavas?,"Paandu, Vibheeshana,Bheeshma",Paandu,Optional,
-3,Gita upadesam was done by Krishna to Arjuna,TRUE,TRUE,TF,Krishna did Gita upadesam to Arjun in the kurukshetra battle field
+3,Who made Geethopadesam to Arjuna?,"Bheeshma,Krishna,Yudhishtira",Krishna,Optional,Krishna did Gita upadesam to Arjun in the kurukshetra battle field
 4,Who is the grand father of Kauravas and Pandavas?,"Bheeshma,Dasaratha,Nanda",Bheeshma,Optional,
 5,Who helped Vedavyasa write Mahabharata?,"Ganesha,Hanuman,Krishna",Ganesha,Optional,
-6,Ghatotkagaja was the son of Krishna,FALSE,FALSE,TF,Ghatotkagaja was the son of Bheeshma
-7,Arjuna was the brother of Bheema,TRUE,TRUE,TF,Arjuna and Bheema were brothers
+6,Who was the father of Ghatotkacha,"Arjuna,Bheema,Duryodhana",Bheema,Optional,Ghatotkagaja was the son of Bheeshma
+7,Arjuna was the son of,"Draupadi,Madri,Kunti",Kunti,Optional,Arjuna and Bheema were brothers
 8,What was Bheema's weapon?,"Bow,Mace,Sword",Mace,Optional,
-9,Kauravaas were 98 brothers,FALSE,FALSE,TF,Kauravaas were 100 brothers
+9,How many brothers were kauravas,98 102 100,100,Optional,Kauravaas were 100 brothers
 10,Who was the Guru of Kauravaas and Pandavaas?,"Drona,Valmiki,Vidura",Drona,Optional,
 11,What was the name of Arjuna's Bow?,"Dhadeechi,Kousthubam,Gandeevam",Gandeevam,Optional,
 12,Who was the wife of Pandavas?,"Bhanumati,Draupadi,Kunti",Draupadi,Optional,
 13,Who married Krishna's sister?,"Bheema,Duryodhana,Arjuna",Arjuna,Optional,
 14,Pandavas changed their identities and served in which King's court?,"Viraata, Karna,Nala",Viraata,Optional,
-15,Kunti and Madri were wives of Paandu,TRUE,TRUE,TF,Paandu had two wifes - kunti and Madri
+15,Kunti and Madri were wives of ?,"Santanu,Pandu,Dritarashtra",Pandu,Optional,Paandu had two wifes - kunti and Madri
 16,What was the famous battle of Mahabharata called?,"Kurukshetra,Mahayudh,Ranabhoomi",Kurukshetra,Optional,
-17,Dharmaraja was the eldest of Pandavas,TRUE,TRUE,TF,Dharmaraja also known as Yudhistara was the eldest son of Pandavaas
+17,Who was the eldest of Pandavas?,"Sahadeva,Bheema,Yudhishtira",Yudhishtira,Optional,Dharmaraja also known as Yudhistara was the eldest son of Pandavaas
 18,Who lied on the bed of arrows until death?,"Karna,Arjuna,Bheeshma",Bheeshma,Optional,
-19,How many chapters did Bhagavadgeeta have?,"21,11,18",18,Optional,
+19,How many chapters did Bhagavadgeeta have?,21 11 18,18,Optional,
 20,In which Yuga did Mahabharata take place?,"Tretha Yuga,Dwaapara Yuga,Kali Yuga",Dwapara yuga,Optional,
 21,Abhimanyu was the son of?,"Arjuna,Bheema,Yudhishtira",Arjuna,Optional,
 22,Hidimba was wife of?,"Arjuna,Nakula,Bheema",Bheema,Optional,
 23,Who was the mother of Kauravas?,"Gaandhaari,Kunti,Radha",Gaandhaari,Optional,
 24,Who was the mother of Bheeshma?,"Ambika,Ganga,Satyavathi",Ganga,Optional,
 25,Who was the Guru or teacher of Karna?,"Drona,Vidura,Parasurama",Parasurama,Optional,
-26,Duryodhana was the enemy of Karna,FALSE,FALSE,TF,Dhuryodhana and Karna were best friends
-27,Kauravaas won the battle of Kurukshetra,FALSE,FALSE,TF,Pandavaas with the help of Krishna won the battle of Kurukshetra
+26,Who befriended Karna and made him the King of Anga?,"Duryodhana,Sakuni,Bheeshma",Duryodhana,Optional,Dhuryodhana and Karna were best friends
+27,Who won the battle of Kurukshetra?,"Kauravas,Yadavas,Pandavas",Pandavas,Optional,Pandavaas with the help of Krishna won the battle of Kurukshetra
 28,Who was known as Savyasachi?,"Arjuna,Sahadeva,Bheeshma",Arjuna,Optional,
 29,Who tried to kill pandavas by setting fire to the lax house they resided in ,"Karna,Duryodhana,Indra",Duryodhana,Optional,
-30,Pandavas hid their weapons on a tree when in vanavasa,TRUE,TRUE,TF,During vanavasam Pandvaas his their weapons on a tree
+30,Pandavas hid their weapons on which tree during their disguise for one year,"peepal, semi, neem",semi,Optional,During vanavasam Pandvaas his their weapons on a tree
 31,In which language was Mahabharata written?,"Hindi,Sanskrit,Tamil",Sanskrit,Optional,
 32,Who was the father of Bheeshma?,"Surya,Santanu,Vichitraveerya",Santanu,Optional,
 33,What was the capital city of Kauravas and Pandavas called?,"Hastinapura,Viratapura,Dwaraka",Hastinapura,Optional,
-34,King Dhritarashtra was blind,TRUE,TRUE,TF,King Dhritarastra was blind since birth
-35,Sahadeva was a good cook,FALSE,FALSE,TF,Sahadeva was very good at Astrology
-36,Kauravaas lost to pandavas in the game of dice and were forced to leave the kingdom,FALSE,FALSE,TF,It was Pandavaas who lost in a game of dice and were forced to leave the kingdom
+34,Who was the blind king of hastinapura,"Duryodhana, dhritarastra, shakuni",dhritarastra,Optional,King Dhritarastra was blind since birth
+35,Sahadeva was good at,"astrology, cooking, raring animals",astrology,Optional,Sahadeva was very good at Astrology
+36,In which game did Pandavas lose to Kauravas and went to exile for 13 years,"Dice, chess, archery",Dice,Optional,It was Pandavaas who lost in a game of dice and were forced to leave the kingdom
 37,Who injured Bheeshma in the battle?,"Drupada,Shikhandi,Satyabhama",Shikhandi,Optional,
 38,Who rode Arjuna's chariot in the battle?,"Krishna,Indra,Hanuman",Krishna,Optional,
-39,Bhagavadgeetha was recited by Krishna to arjuna in the battle field,TRUE,TRUE,TF,Krishna did Gita Upadesam to Arjuna in the battlefield
+39,Bhagavadgeetha was recited by Krishna to,"Bheeshma, Arjuna, Yudhistara",Arjuna,Optional,Krishna did Gita Upadesam to Arjuna in the battlefield
 40,Who encouraged Duryodhana's evil ways?,"Bheeshma,Sakuni,Vidura",Sakuni,Optional,
 41,Shakuni was the brother of?,"Gaandhari,Duryodhana,Draupadi",Gaandhari,Optional,
+42,Who was the fisherman's daughter who married Santanu?,"Amba,Satyavati,Bhanumati",Satyavati,Optional,
+43,Who promised to be on the flag of Arjuna's chariot during war ?,"Krishna,Indra,Hanuman",Hanuman,Optional,
+44,Who was very good at horse riding and most handsome among Pandava brothers,"Arjuna,Nakula,Sahadeva",Nakula,Optional,
+45,Which God gifted Akshayapatra to Yudhishtira?,"Surya,Krishna,Brahma",Surya,Optional,

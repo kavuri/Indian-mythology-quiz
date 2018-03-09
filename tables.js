@@ -97,8 +97,7 @@ class Tables {
               Question: quiz.Question,
               Responses: quiz.Responses,
               Answer: quiz.Answer,
-              Type: quiz.Type,
-              Hint: quiz.Hint
+              Type: quiz.Type
             }
           };
 

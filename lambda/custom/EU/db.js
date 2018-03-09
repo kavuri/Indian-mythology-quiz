@@ -89,7 +89,6 @@ module.exports = class Db {
         }
       })
     } else {
-      console.log('====@@score=',data.scores);
       var params = {
         TableName: 'user',
         Key: {
