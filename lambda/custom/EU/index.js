@@ -139,6 +139,11 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
     console.log("@@2. START:NoIntent")
     this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
+  "AMAZON.StartOverIntent": function() {
+    console.log("@@2. START:StartOverIntent");
+    this.handler.state = states.START;
+    this.emitWithState("Start");
+  }
 });
 
 const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
@@ -273,16 +278,21 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
   "AMAZON.YesIntent": function() {
     console.log("@@3. QUIZ:YesIntent")
     this.handler.state = states.START;
-    this.emitWithState("Quiz");
+    this.emitWithState("Start");
   },
   "AMAZON.NoIntent": function() {
     console.log("@@3. QUIZ:NoIntent")
-    this.emit(":ask", this.t("EXIT_SKILL_MESSAGE"))
+    this.emit(":tell", this.t("EXIT_SKILL_MESSAGE"))
   },
   "Unhandled": function() {
     console.log("@@3. QUIZ:Unhandled")
     this.emit(":ask", this.t("ASK_TO_REPEAT"));
     // this.emitWithState("AnswerIntent");
+  },
+  "AMAZON.StartOverIntent": function() {
+    console.log("@@2. START:StartOverIntent");
+    this.handler.state = states.QUIZ;
+    this.emitWithState("Quiz");
   }
 });
 
