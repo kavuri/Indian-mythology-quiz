@@ -1,1071 +1,1083 @@
 {
+  "interactionModel": {
     "languageModel": {
-        "invocationName": "indian mythology quiz",
-        "intents": [
+      "invocationName": "indian mythology quiz",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "QuizIntent",
+          "slots": [
             {
-                "name": "AMAZON.CancelIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AMAZON.HelpIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AMAZON.StopIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AMAZON.StartOverIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AMAZON.PauseIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "QuizIntent",
-                "slots": [
-                    {
-                        "name": "mythology",
-                        "type": "Mythology_Types"
-                    }
-                ],
-                "samples": [
-                    "Can you start Indian Mythology quiz",
-                    "a quiz",
-                    "for a quiz",
-                    "and start a quiz",
-                    "Indian mythology quiz",
-                    "start a quiz game",
-                    "start a quiz"
-                ]
-            },
-            {
-                "name": "MahabharathaIntent",
-                "slots": [],
-                "samples": [
-                    "mahabharatha",
-                    "mahabharat"
-                ]
-            },
-            {
-                "name": "RamayanaIntent",
-                "slots": [],
-                "samples": [
-                    "Ramayana",
-                    "Rama",
-                    "Ramayan"
-                ]
-            },
-            {
-                "name": "BhagavataIntent",
-                "slots": [],
-                "samples": [
-                    "bhagavat",
-                    "bhagavatam"
-                ]
-            },
-            {
-                "name": "AMAZON.YesIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AMAZON.NoIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AMAZON.RepeatIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AnswersIntent",
-                "slots": [
-                    {
-                        "name": "answers",
-                        "type": "answers",
-                        "samples": [
-                            "{answers}"
-                        ]
-                    }
-                ],
-                "samples": [
-                    "{answers}"
-                ]
+              "name": "mythology",
+              "type": "Mythology_Types"
             }
-        ],
-        "types": [
+          ],
+          "samples": [
+            "start Indian mythology quiz with {mythology}",
+            "ask Indian mythology quiz for {mythology} quiz",
+            "ask Indian mythology quiz to start {mythology} quiz",
+            "Begin indian mythology quiz with {mythology}",
+            "Open Indian mythology quiz with {mythology}",
+            "start {mythology} Indian quiz",
+            "start Indian mythology quiz for {mythology} quiz",
+            "Can you start Indian Mythology quiz",
+            "a quiz",
+            "for a quiz",
+            "and start a quiz",
+            "Indian mythology quiz",
+            "start a quiz game",
+            "start a quiz"
+          ]
+        },
+        {
+          "name": "MahabharathaIntent",
+          "samples": [
+            "mahabharatha",
+            "mahabharat"
+          ]
+        },
+        {
+          "name": "RamayanaIntent",
+          "samples": [
+            "Ramayana",
+            "Rama",
+            "Ramayan"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AnswersIntent",
+          "slots": [
             {
-                "name": "Mythology_Types",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Mahabharatha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ramayana",
-                            "synonyms": []
-                        }
-                    }
+              "name": "answers",
+              "type": "answers",
+              "samples": [
+                "{answers}"
+              ]
+            }
+          ],
+          "samples": [
+            "{answers}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "Mahabharatha",
+                "synonyms": [
+                  "mahabharata",
+                  "mahabharat"
                 ]
+              }
             },
             {
-                "name": "answers",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "shiva",
-                            "synonyms": [
-                                "shiv",
-                                "siva"
-                            ]
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "tataki",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "surpanaka",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Gaandhari",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sakuni",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Satyabhama",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Shikhandi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Drupada",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Dwaraka",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Viratapura",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Hastinapura",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Vichitraveerya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Santanu",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Surya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "tamil",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "hindi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sanskrit",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Indra",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sahadeva",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Parasurama",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Satyavathi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ganga",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ambika",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Gaandhaari",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Yudhishtira",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ranabhoomi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Mahayudh",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kurukshetra",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Nala",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Karna",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Viraata",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Arjuna",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Duryodhana",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kunti",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Draupadi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Bhanumati",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kousthubam",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Dhadeechi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "vidura",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Drona",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "sword",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "mace",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "bow",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Krishna",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ganesha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Nanda",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Bheeshma",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Paandu",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Vedavyasa",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Valmiki",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Peerdas",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "kabirdas",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Tulsidas",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Mandodari",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sruthakeerthi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Radha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Anjana",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Vasudha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Gowthami",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Arundhati",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ahalya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Mareecha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Subaahu",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "tiger",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "squirrel",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Mouse",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "kuru",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "manu",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Raghu",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sumithra",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Maandavi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "earth",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "sun",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "moon",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sanjeevanam",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Gandeevam",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kodandam",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Jataayu",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Soma",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Yayaati",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Videha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ravana",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Vibheeshana",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Meghanatha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kausalya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sumitra",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kaikeyi",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "meru",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": " Vindhya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": " Ashoka",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Urmila",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sabari",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Durvasa",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Putrakaameshti",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Rajasuya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ashwamedha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Satrughna",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Vishwamitra",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Vasishta",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kusa",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Lava",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "sahadev",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "nakula",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Jambavantha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sugreeva",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Lakshmana",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Dakshina",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Ayodhya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "treta yuga",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kali yuga",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Angadha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Agastya",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Hanuman",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Kumbhakarna",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Bharata",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Lanka",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Janaka",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Dwapara",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Vaali",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Dasaratha",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "false",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "true",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "sita",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "rama",
-                            "synonyms": [
-                                "ram"
-                            ]
-                        }
-                    }
-                ]
+              "id": "",
+              "name": {
+                "value": "Ramayana",
+                "synonyms": []
+              }
             }
-        ]
+          ],
+          "name": "Mythology_Types"
+        },
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "bheema",
+                "synonyms": [
+                  "bheem",
+                  "bhem"
+                ]
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "shiva",
+                "synonyms": [
+                  "shiv",
+                  "siva"
+                ]
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "tataki",
+                "synonyms": [
+                  "taataki"
+                ]
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "surpanaka",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Gaandhari",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sakuni",
+                "synonyms": [
+                  "shakuni"
+                ]
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Satyabhama",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Shikhandi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Drupada",
+                "synonyms": [
+                  "drupad"
+                ]
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Dwaraka",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Viratapura",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Hastinapura",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Vichitraveerya",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Santanu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Surya",
+                "synonyms": [
+                  "sun",
+                  "sun god"
+                ]
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "tamil",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "hindi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sanskrit",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Indra",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sahadeva",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Parasurama",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Satyavathi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ganga",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ambika",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Gaandhaari",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Yudhishtira",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ranabhoomi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Mahayudh",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kurukshetra",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Nala",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Karna",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Viraata",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Arjuna",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Duryodhana",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kunti",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Draupadi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Bhanumati",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kousthubam",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Dhadeechi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "vidura",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Drona",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "sword",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "mace",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "bow",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Krishna",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ganesha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Nanda",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Bheeshma",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Paandu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Vedavyasa",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Valmiki",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Peerdas",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "kabirdas",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Tulsidas",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Mandodari",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sruthakeerthi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Radha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Anjana",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Vasudha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Gowthami",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Arundhati",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ahalya",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Mareecha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Subaahu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "tiger",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "squirrel",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Mouse",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "kuru",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "manu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Raghu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sumithra",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Maandavi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "earth",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "sun",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "moon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sanjeevanam",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Gandeevam",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kodandam",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Jataayu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Soma",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Yayaati",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Videha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ravana",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Vibheeshana",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Meghanatha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kausalya",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sumitra",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kaikeyi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "meru",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": " Vindhya",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": " Ashoka",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Urmila",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sabari",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Durvasa",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Putrakaameshti",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Rajasuya",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ashwamedha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Satrughna",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Vishwamitra",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Vasishta",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kusa",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Lava",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "sahadev",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "nakula",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Jambavantha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Sugreeva",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Lakshmana",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Dakshina",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Ayodhya",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "treta yuga",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kali yuga",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Angadha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Agastya",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Hanuman",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Kumbhakarna",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Bharata",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Lanka",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Janaka",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Dwapara",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Vaali",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Dasaratha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "false",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "true",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "sita",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "rama",
+                "synonyms": [
+                  "ram"
+                ]
+              }
+            }
+          ],
+          "name": "answers"
+        }
+      ]
     },
     "dialog": {
-        "intents": [
+      "intents": [
+        {
+          "name": "QuizIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1060594341761"
+          },
+          "slots": [
             {
-                "name": "QuizIntent",
-                "confirmationRequired": true,
-                "prompts": {
-                    "confirmation": "Confirm.Intent.1060594341761"
-                },
-                "slots": [
-                    {
-                        "name": "mythology",
-                        "type": "Mythology_Types",
-                        "confirmationRequired": false,
-                        "elicitationRequired": true,
-                        "prompts": {
-                            "elicitation": "Elicit.Slot.1149375771343.1380131988938"
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "AnswersIntent",
-                "confirmationRequired": false,
-                "prompts": {},
-                "slots": [
-                    {
-                        "name": "answers",
-                        "type": "answers",
-                        "confirmationRequired": false,
-                        "elicitationRequired": true,
-                        "prompts": {
-                            "elicitation": "Elicit.Slot.763211389521.1036020522356"
-                        }
-                    }
-                ]
+              "name": "mythology",
+              "type": "Mythology_Types",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1149375771343.1380131988938"
+              }
             }
-        ]
+          ]
+        },
+        {
+          "name": "AnswersIntent",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "answers",
+              "type": "answers",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.763211389521.1036020522356"
+              }
+            }
+          ]
+        }
+      ]
     },
     "prompts": [
-        {
-            "id": "Confirm.Intent.1060594341761",
-            "variations": [
-                {
-                    "type": "PlainText",
-                    "value": "Choose one of Ramayana, Mahabharatha to begin the quiz"
-                }
-            ]
-        },
-        {
-            "id": "Elicit.Slot.1149375771343.1380131988938",
-            "variations": [
-                {
-                    "type": "PlainText",
-                    "value": "Choose one of Ramayana, Mahabharatha to start the quiz"
-                }
-            ]
-        },
-        {
-            "id": "Elicit.Slot.763211389521.1036020522356",
-            "variations": [
-                {
-                    "type": "PlainText",
-                    "value": "Please repeat the answer"
-                }
-            ]
-        }
+      {
+        "id": "Confirm.Intent.1060594341761",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Choose one of Ramayana, Mahabharatha to begin the quiz"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1149375771343.1380131988938",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Choose one of Ramayana, Mahabharatha to start the quiz"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.763211389521.1036020522356",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please repeat the answer"
+          }
+        ]
+      }
     ]
+  }
 }

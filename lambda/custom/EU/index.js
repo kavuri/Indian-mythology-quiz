@@ -13,16 +13,19 @@ const states = {
 
 const handlers = {
   "LaunchRequest": function() {
+    initUserAttrs(this);
     this.handler.state = states.START;
     console.log("@@1. LaunchRequest")
     this.emitWithState("Start");
   },
   "QuizIntent": function() {
-    this.handler.state = states.QUIZ;
+    initUserAttrs(this);
+    this.handler.state = states.START;
     console.log("@@1. QuizIntent")
-    this.emitWithState("Quiz");
+    this.emitWithState("Start");
   },
   "AnswersIntent": function() {
+    initUserAttrs(this);
     this.handler.state = states.START;
     console.log("@@1. AnswersIntent")
     this.emitWithState("AnswersIntent");
@@ -41,34 +44,63 @@ const handlers = {
 const startHandlers = Alexa.CreateStateHandler(states.START,{
   "Start": function() {
     console.log("@@2. START:Start")
-    this.attributes["user"] = {
-      userId: '',
-      deviceId: [],
-      avble_qs: {},
-      scores: [{mythology:'', sc:-1, timestamp: ''}]
-    };
 
-    db.available_mythologies((err, data) => {
-      if (err) {
-        console.log('error in getting mythologies', err);
-        this.emit(":tell", this.t("SYSTEM_ERROR"));
-      } else if (!_.isNull(data) || !_.isEmpty(data) || !_.isUndefined(data)) {
-        var mythologies = "";
-        for (var i=0; i<data.length; i++) {
-          mythologies += data[i].name + ",";
-          this.attributes["user"].avble_qs[data[i].name] = [];
+    // Check if the request has a slot with the mythology choice
+    var choice = "";
+    if (_.has(this.event.request.intent, "slots.mythology.value")) {
+      choice = this.event.request.intent.slots.mythology.value;
+      console.log("##choice=", choice)
+
+      availableMythologies((err, mythologies) => {
+        if (err) {
+          this.emit(":tell", self.t("SYSTEM_ERROR"));
         }
 
-        let output = "";
-        if (!_.has(this.attributes, "quizscore")) {
-          output = this.t("WELCOME_MESSAGE") + this.t("CHOICE_QUESTION", mythologies)
+        if (mythologies.indexOf(choice) !== -1) {
+          // choice exists, send out the intent
+          this.handler.state = states.START;
+          if (_.isEqual(choice, "Ramayana")) {
+            this.emitWithState("RamayanaIntent");
+          } else if (_.isEqual(choice, "Mahabharata")) {
+            this.emitWithState("MahabharathaIntent");
+          }
         } else {
-          output = this.t("CHOICE_QUESTION", mythologies)
+          // Choice does not exist, request for a proper choice
+          this.emit(":ask", this.t("NO_SUCH_CHOICE", mythologies));
         }
-
+      });
+    } else {
+      mythologyChoice(this, (output) => {
         this.emit(":ask", output);
+      })
+    }
+  },
+  "AnswersIntent": function() {
+    availableMythologies((err, mythologies) => {
+      if (err) {
+        this.emit(":tell", self.t("SYSTEM_ERROR"));
       }
-    });
+
+      // Check if the requested mythology is part of the available list
+      var choice = "";
+      if (_.has(this.event.request.intent.slots.answers, "value")) {
+        choice = this.event.request.intent.slots.answers.value;
+        if (mythologies.indexOf(choice) !== -1) {
+          // choice exists, send out the intent
+          if (_.isEqual(choice, "Ramayana")) {
+            this.emitWithState("RamayanaIntent");
+          } else if (_.isEqual(choice, "Mahabharata")) {
+            this.emitWithState("MahabharathaIntent");
+          }
+        } else {
+          // Choice does not exist, request for a proper choice
+          this.emit(":ask", this.t("NO_SUCH_CHOICE", mythologies));
+        }
+      } else {
+        // Does this condition arise?
+        this.emit(":ask", this.t("DID_NOT_UNDERSTAND_CHOICE", mythologies));
+      }
+    })
   },
   "RamayanaIntent": function() {
     console.log("@@2. START:RamayanaIntent")
@@ -97,13 +129,13 @@ const startHandlers = Alexa.CreateStateHandler(states.START,{
   // "BhagavataIntent": function() {
   //   this.attributes["choice"] = "Bhagavata";
 
-        // initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
-        //   if (err) {
-        //     this.emit(":tell", this.t("SYSTEM_ERROR"));
-        //   }
-        //   this.handler.state = states.QUIZ;
-        //   this.emitWithState("Quiz");
-        // });
+  // initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
+  //   if (err) {
+  //     this.emit(":tell", this.t("SYSTEM_ERROR"));
+  //   }
+  //   this.handler.state = states.QUIZ;
+  //   this.emitWithState("Quiz");
+  // });
   // },
   "QuizIntent": function() {
     console.log("@@2. START:QuizIntent")
@@ -295,6 +327,60 @@ const quizHandlers = Alexa.CreateStateHandler(states.QUIZ,{
     this.emitWithState("Quiz");
   }
 });
+
+function initUserAttrs(self) {
+  self.attributes["user"] = {
+    userId: '',
+    deviceId: [],
+    avble_qs: {},
+    scores: [{mythology:'', sc:-1, timestamp: ''}]
+  };
+}
+
+function mythologyChoice(self, callback) {
+  console.log("mythologyChoice");
+  db.available_mythologies((err, data) => {
+    console.log("err,daa", err, data)
+    if (err) {
+      console.log('error in getting mythologies', err);
+      self.emit(":tell", self.t("SYSTEM_ERROR"));
+    } else if (!_.isNull(data) || !_.isEmpty(data) || !_.isUndefined(data)) {
+      var mythologies = "";
+      for (var i=0; i<data.length; i++) {
+        mythologies += data[i].name + ",";
+        self.attributes["user"].avble_qs[data[i].name] = [];
+      }
+
+      let output = "";
+      if (!_.has(self.attributes, "quizscore")) {
+        output = self.t("WELCOME_MESSAGE") + self.t("CHOICE_QUESTION", mythologies)
+      } else {
+        output = self.t("CHOICE_QUESTION", mythologies)
+      }
+
+      console.log("mythologyChoice::output=",output)
+      callback(output);
+    }
+  });
+}
+
+function availableMythologies(callback) {
+  var mythologies = "";
+  db.available_mythologies((err, data) => {
+    console.log("err,daa", err, data)
+    if (err) {
+      console.log('error in getting mythologies', err);
+      callback(err, null);
+    } else if (!_.isNull(data) || !_.isEmpty(data) || !_.isUndefined(data)) {
+      var mythologies = "";
+      for (var i=0; i<data.length; i++) {
+        mythologies += data[i].name + ",";
+        // self.attributes["user"].avble_qs[data[i].name] = [];
+      }
+      callback(null, mythologies);
+    }
+  });
+}
 
 function initQuestions(self, userId, mythology_choice, callback) {
   // Fetch the available questions for the user from DB

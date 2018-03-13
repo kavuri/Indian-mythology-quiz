@@ -10,7 +10,7 @@ var languageStrings = {
       "CHOICE_QUESTION": " Choose one of %s to start the quiz. ",
       "START_QUIZ_MESSAGE": " I will ask you %s questions about %s. Lets start.",
       "EXIT_SKILL_MESSAGE": " Thank you for playing the Indian Mythology Quiz!  Let's play again soon!",
-      "HELP_MESSAGE": " This is a quiz game that tests your knowledge of Indian mythologies like the Ramayana, Mahabharatha. Would you like me to start the quiz?",
+      "HELP_MESSAGE": " This is a quiz game that tests your knowledge of Indian mythologies like the Ramayana, Mahabharatha. You will be asked a question with options and choosing a right option will get you a point. Would you like to start the quiz?",
       "CORRECT_RESPONSES": ["shabash", "way to go", "well done", "Bingo", "wow", "Bravo", "awesome"],
       "INCORRECT_RESPONSES": ["Uh oh", "na-na"],
       "BAD_OPTION": " I'm sorry. %s is not something I know very much about in this skill. ",
@@ -24,7 +24,10 @@ var languageStrings = {
       "CORRECT_ANSWER": " The correct answer is %s. ",
       "NEXT_QUESTION_PREFIX": " Your next question. ",
       "PLAY_AGAIN":" Would you like to play again? ",
-      "ZERO_SCORE_RESPONSE": " Not a problem. You did gain some knowledge. Didn't you? "
+      "ZERO_SCORE_RESPONSE": " Not a problem. You did gain some knowledge. Didn't you? ",
+      "TF_HINT": " Thats wrong. %s. ",
+      "NO_SUCH_CHOICE": " I currently have %s mythologies. Please choose one among these. ",
+      "DID_NOT_UNDERSTAND_CHOICE": " I did not understand your request. Please choose one among %s to being the quiz. "
     }
   }
 }

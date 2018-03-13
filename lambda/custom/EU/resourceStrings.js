@@ -25,7 +25,9 @@ var languageStrings = {
       "NEXT_QUESTION_PREFIX": " Your next question. ",
       "PLAY_AGAIN":" Would you like to play again? ",
       "ZERO_SCORE_RESPONSE": " Not a problem. You did gain some knowledge. Didn't you? ",
-      "TF_HINT": " Thats wrong. %s. "
+      "TF_HINT": " Thats wrong. %s. ",
+      "NO_SUCH_CHOICE": " I currently have %s mythologies. Please choose one among these. ",
+      "DID_NOT_UNDERSTAND_CHOICE": " I did not understand your request. Please choose one among %s to being the quiz. "
     }
   }
 }
