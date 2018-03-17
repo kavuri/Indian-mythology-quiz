@@ -31,10 +31,38 @@ const handlers = {
     this.emitWithState("AnswersIntent");
   },
   "AMAZON.HelpIntent": function() {
+    initUserAttrs(this);
     console.log("@@1. HelpIntent")
     this.emit(":ask", this.t("HELP_MESSAGE"));
   },
+  "RamayanaIntent": function() {
+    console.log("@@2. START:RamayanaIntent")
+    initUserAttrs(this);
+    this.attributes["choice"] = "Ramayana";
+
+    initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
+      if (err) {
+        this.emit(":tell", this.t("SYSTEM_ERROR"));
+      }
+      this.handler.state = states.QUIZ;
+      this.emitWithState("Quiz");
+    });
+  },
+  "MahabharathaIntent": function() {
+    console.log("@@2. START:MahabharathaIntent")
+    initUserAttrs(this);
+    this.attributes["choice"] = "Mahabharata";
+
+    initQuestions(this, this.event.context.System.user.userId, this.attributes["choice"], (err, done) => {
+      if (err) {
+        this.emit(":tell", this.t("SYSTEM_ERROR"));
+      }
+      this.handler.state = states.QUIZ;
+      this.emitWithState("Quiz");
+    });
+  },
   "Unhandled": function() {
+    initUserAttrs(this);
     this.handler.state = states.START;
     console.log("@@1. Unhandled")
     this.emitWithState("Start");
@@ -396,10 +424,14 @@ function initQuestions(self, userId, mythology_choice, callback) {
         self.attributes["user"].n = false;
         // User exists in the system. Check if questions list exists for the user
         if (!_.isEmpty(data.avble_qs[mythology_choice])) {
-          if (self.attributes["user"].avble_qs[mythology_choice].length < constants.TOTAL_QUESTIONS) {
-            self.attributes["user"].avble_qs[mythology_choice] = _.range(1, totalQuestions+1); // generate the range of numbers
+          console.log("%%%",self.attributes["user"]);
+          if (!_.isEmpty(self.attributes["user"].avble_qs)) {
+            if (self.attributes["user"].avble_qs[mythology_choice].length < constants.TOTAL_QUESTIONS) {
+              self.attributes["user"].avble_qs[mythology_choice] = _.range(1, totalQuestions+1); // generate the range of numbers
+            }
+          } else {
+            self.attributes["user"].avble_qs[mythology_choice] = data.avble_qs[mythology_choice];  
           }
-          self.attributes["user"].avble_qs[mythology_choice] = data.avble_qs[mythology_choice];
         } else {
           self.attributes["user"].avble_qs[mythology_choice] = _.range(1, totalQuestions+1); // generate the range of numbers
         }
