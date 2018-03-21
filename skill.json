@@ -2,12 +2,33 @@
   "skillManifest": {
     "publishingInformation": {
       "locales": {
+        "en-US": {
+          "name": "Indian Mythology Quiz",
+          "summary": "A quiz that tests your knowledge of Indian mythologies like Ramayana, Mahabharatha, Bhagavatha",
+          "examplePhrases": [
+            "Alexa, start indian mythology quiz",
+            "Alexa, Begin Indian mythology quiz",
+            "Alexa, ask Indian mythology quiz for mahabharata quiz"
+          ],
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/8b3e/762747aded9c4b0bb9f96def556bf7c6/APP_ICON?versionId=Pgyr6ECmB1as0N6zAivTvRx13rd5hFZw&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1521399671&Signature=r%2BcLYeaOnc7qQbPwpujYHfWLko0%3D",
+          "description": "Indian mythologies are filled with tremendous worldly knowledge, wisdom. This quiz will help you understand the Who's and What's of the great epics. We will keep on adding more quiz material with time. Please drop a note at contact@kamamishu.com for any feedback",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/9c34/fd124ff574ca4918a9203880fd30ff5a/APP_ICON_LARGE?versionId=WMVJuVnJM7PZpV_TGT38fLcrl9WykV8g&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1521399671&Signature=v82aENTcYl7Y5K%2BVy3cXXmBTHfU%3D",
+          "keywords": [
+            "kamamishu",
+            "indian",
+            "mythology",
+            "epic",
+            "ramayana",
+            "mahabharata",
+            "bhagavata"
+          ]
+        },
         "en-IN": {
           "summary": "A quiz that tests your knowledge of Indian mythologies like Ramayana, Mahabharatha, Bhagavatha",
           "examplePhrases": [
             "Alexa, start indian mythology quiz",
             "Alexa, Begin Indian mythology quiz",
-            "Alexa, ask Indian mythology quiz for a quiz"
+            "Alexa, ask Indian mythology quiz for mahabharata quiz"
           ],
           "keywords": [
             "kamamishu",
@@ -19,9 +40,9 @@
             "bhagavata"
           ],
           "name": "Indian Mythology Quiz",
-          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/8b3e/762747aded9c4b0bb9f96def556bf7c6/APP_ICON?versionId=Pgyr6ECmB1as0N6zAivTvRx13rd5hFZw&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1520857009&Signature=rG8EdH0mkChmoaeeanJNyBpdKgE%3D",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/8b3e/762747aded9c4b0bb9f96def556bf7c6/APP_ICON?versionId=Pgyr6ECmB1as0N6zAivTvRx13rd5hFZw&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1521399671&Signature=r%2BcLYeaOnc7qQbPwpujYHfWLko0%3D",
           "description": "Indian mythologies are filled with tremendous worldly knowledge, wisdom. This quiz will help you understand the Who's and What's of the great epics. We will keep on adding more quiz material with time. Please drop a note at contact@kamamishu.com for any feedback",
-          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/9c34/fd124ff574ca4918a9203880fd30ff5a/APP_ICON_LARGE?versionId=WMVJuVnJM7PZpV_TGT38fLcrl9WykV8g&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1520857009&Signature=ElvLO7dcFa02w6yQqdhZ38adiHU%3D"
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/9c34/fd124ff574ca4918a9203880fd30ff5a/APP_ICON_LARGE?versionId=WMVJuVnJM7PZpV_TGT38fLcrl9WykV8g&AWSAccessKeyId=AKIAI3X6PUXD7CU5F5BQ&Expires=1521399671&Signature=v82aENTcYl7Y5K%2BVy3cXXmBTHfU%3D"
         }
       },
       "isAvailableWorldwide": true,
@@ -55,7 +76,7 @@
       "allowsPurchases": false,
       "isExportCompliant": true,
       "containsAds": false,
-      "isChildDirected": true,
+      "isChildDirected": false,
       "usesPersonalInfo": false
     }
   }
